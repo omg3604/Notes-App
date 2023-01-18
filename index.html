@@ -48,23 +48,27 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" id="searchTxt" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
 
-    <div class="container my-3">
+    <div class="container my-5">
         <h2>Welcome to Note it!</h2>
         <h4 class="mb-5">Save your notes here.</h4>
-        <div class="card text-center">
-            <div class="card-header">
+        <div class="card mx-auto" style="width: 60rem;">
+            <div class="card-header" style="font-size: 1.6rem; font-weight: 500;">
                 Add a Note
             </div>
             <div class="card-body">
-                <h5 class="card-title">Write down you note below.</h5>
-                <div class="mb-3">
-                    <textarea class="form-control" id="addTxt" rows="3"></textarea>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default" style="font-size: larger; font-weight: 400;">Note Title :</span>
+                    <textarea class="form-control" id="addTitle" rows="1"></textarea>                  
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default" style="font-size: larger; font-weight:400 ;">Write your note here : </span>
+                    <textarea class="form-control" id="addTxt" rows="4"></textarea>
                 </div>
                 <button class="btn btn-primary" id="addBtn">Add Note</button>
             </div>
