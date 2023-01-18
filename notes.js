@@ -5,6 +5,29 @@ let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function (e) {
     let addTitle = document.getElementById("addTitle");
     let addTxt = document.getElementById("addTxt");
+    let titleAlert = document.getElementById("titleAlert");
+    if(!addTitle.value ){
+        titleAlert.style.display = "block";
+        return ;
+    }
+    else{
+        titleAlert.style.display = "none";
+    }
+    let noteAlert = document.getElementById("noteAlert");
+    if(!addTxt.value){
+        noteAlert.style.display = "block";
+        return;
+    }
+    else{
+        noteAlert.style.display = "none";
+    }
+    
+    let succAdd = document.getElementById("successAdd");
+    succAdd.style.display = "block";
+    window.setTimeout(function(){
+        succAdd.style.display = "none";
+    }, 5000);
+
     let titles = localStorage.getItem("titles");
     let notes = localStorage.getItem("notes");
     let dates = localStorage.getItem("dates");
@@ -36,6 +59,8 @@ addBtn.addEventListener("click", function (e) {
     addTitle.value = "";
     addTxt.value = "";
     showNotes();
+    //succAdd.style.display = "none";
+
     // console.log(notesObj);
 });
 

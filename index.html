@@ -47,7 +47,8 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" id="searchTxt" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" id="searchTxt" type="search" placeholder="Search"
+                        aria-label="Search">
                     <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
                 </form>
             </div>
@@ -61,24 +62,35 @@
             <div class="card-header" style="font-size: 1.6rem; font-weight: 500;">
                 Add a Note
             </div>
-            <div class="card-body">
+            <div class="card-body" id="cardBody">
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default" style="font-size: larger; font-weight: 400;">Note Title :</span>
-                    <textarea class="form-control" id="addTitle" rows="1"></textarea>                  
+                    <span class="input-group-text" id="inputGroup-sizing-default"
+                        style="font-size: larger; font-weight: 400;">Note Title :</span>
+                    <textarea class="form-control" id="addTitle" rows="1"></textarea>
+                </div>
+                <div class="alert alert-info" role="alert" id="titleAlert" style="display : none">
+                    Please set the Note Title!
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default" style="font-size: larger; font-weight:400 ;">Write your note here : </span>
+                    <span class="input-group-text" id="inputGroup-sizing-default"
+                        style="font-size: larger; font-weight:400 ;">Write here : </span>
                     <textarea class="form-control" id="addTxt" rows="4"></textarea>
                 </div>
+                <div class="alert alert-info" role="alert" id="noteAlert" style="display : none">
+                    Please write atleast a single line note!
+                </div>
                 <button class="btn btn-primary" id="addBtn">Add Note</button>
+                <div class="alert alert-success" role="alert" id="successAdd" style="display : none">
+                    <h4 class="alert-heading">Well done!</h4>
+                    <p>Aww yeah! you have successfully added your note. You can see all your saved notes in the 'Saved Notes' Section.</p>
+                </div>
             </div>
         </div>
         <h2 class="savednoteshead mt-5">Saved Notes</h2>
         <hr>
         <div id="notes" class="row container-fluid">
-            
-        </div>
 
+        </div>
     </div>
 
     <script src="notes.js"></script>
