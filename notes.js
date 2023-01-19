@@ -3,6 +3,8 @@ showNotes();
 // if a user adds a note, then add it to the local storage
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function (e) {
+    document.getElementById("noteAlert").style.display = "none";
+    document.getElementById("titleAlert").style.display = "none";
     let addTitle = document.getElementById("addTitle");
     let addTxt = document.getElementById("addTxt");
     let titleAlert = document.getElementById("titleAlert");
@@ -21,13 +23,12 @@ addBtn.addEventListener("click", function (e) {
     else{
         noteAlert.style.display = "none";
     }
-    
     let succAdd = document.getElementById("successAdd");
     succAdd.style.display = "block";
     window.setTimeout(function(){
         succAdd.style.display = "none";
     }, 5000);
-
+    
     let titles = localStorage.getItem("titles");
     let notes = localStorage.getItem("notes");
     let dates = localStorage.getItem("dates");
@@ -95,7 +96,7 @@ function showNotes() {
                 <hr>
                 <p class="card-text"> ${element} </p>
             </div>
-            <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-primary mx-auto mb-2" style="width: 8rem;">Delete Note</button>
+            <button id="${index}" onclick="deleteNote(this.id)" type="button" class="btn btn-outline-danger btn-sm mx-auto mb-2" style="width: 8rem;">Delete</button>
             <div class="card-footer text-muted text-center">
                 <p class="mb-0"> ${d} </p>
             </div>
@@ -148,7 +149,7 @@ searchBtn.addEventListener("click", function (e) {
 
     let noteCards = document.getElementsByClassName("noteCard");
     Array.from(noteCards).forEach(function (element) {
-        let cardTitle = element.getElementsByTagName("h4")[0].innerText;
+        let cardTitle = element.getElementsByClassName("card-title")[0].innerText;
         if (cardTitle.includes(inputVal1) || cardTitle.includes(inputVal2) || cardTitle.includes(inputVal)) {
             element.style.display = "block";
         }
